@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property
+                name="LOG_PATTERN">%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+        </Property>
+    </Properties>
+
+    <Appenders>
+        <File name="SearchFile" fileName="logs/search.log">
+            <LevelRangeFilter minlevel="INFO" maxlevel="INFO"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </File>
+
+        <File name="ExceptionsFile" fileName="logs/exceptions.log" >
+            <LevelRangeFilter minlevel="DEBUG" maxlevel="DEBUG"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </File>
+
+        <File name="MismatchFile" fileName="logs/mismatch.log">
+            <LevelRangeFilter minlevel="ERROR" maxlevel="ERROR"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="trace">
+            <AppenderRef ref="SearchFile" level="info"/>
+            <AppenderRef ref="ExceptionsFile" level="debug"/>
+            <AppenderRef ref="MismatchFile" level="error"/>
+        </Root>
+    </Loggers>
+</Configuration>

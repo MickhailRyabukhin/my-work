@@ -1,0 +1,6 @@
+spring.datasource.url: jdbc:mysql://localhost:3306/todos?useUnicode=true&serverTimezone=UTC
+spring.datasource.username: root
+spring.datasource.password: Voblya1!
+spring.jpa.hibernate.ddl-auto: none
+someProperty:
+      value: It's a Property!
